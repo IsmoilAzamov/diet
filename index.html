@@ -1,0 +1,2743 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Yetti Kunlik Parhez · Sog‘lom Ozish Dasturi</title>
+  <meta name="description" content="84 kg dan 74 kg gacha ozish uchun 7 kunlik mukammal parhez taomnoma, kunlik nazorat (ptichka) va suv hisoblagichi.">
+  <meta name="theme-color" content="#0F172A">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Parhez 7">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥑</text></svg>">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥑</text></svg>">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #F8FAF9;
+      --surface: #FFFFFF;
+      --surface-elevated: #FFFFFF;
+      --card-bg: #FFFFFF;
+      --border: #E2E8F0;
+      --border-subtle: #EDF2F7;
+      
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --text-subtle: #94A3B8;
+
+      --emerald: #059669;
+      --emerald-dark: #047857;
+      --emerald-light: #ECFDF5;
+      --emerald-border: #A7F3D0;
+      
+      --accent: #F59E0B;
+      --accent-light: #FEF3C7;
+      --danger: #E11D48;
+      --danger-light: #FFE4E6;
+      --blue: #0284C7;
+      --blue-light: #E0F2FE;
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-xl: 28px;
+      --radius-full: 9999px;
+
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+      --shadow-float: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+
+      --font-display: 'Outfit', -apple-system, system-ui, sans-serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, system-ui, sans-serif;
+
+      --safe-top: env(safe-area-inset-top, 0px);
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+      --bottom-nav-height: 68px;
+    }
+
+    [data-theme="dark"] {
+      --bg: #090E0C;
+      --surface: #121B17;
+      --surface-elevated: #182420;
+      --card-bg: #15221D;
+      --border: #22352E;
+      --border-subtle: #1B2B24;
+      
+      --text-main: #F1F5F3;
+      --text-muted: #8FA39A;
+      --text-subtle: #5D7268;
+
+      --emerald: #10B981;
+      --emerald-dark: #059669;
+      --emerald-light: #064E3B40;
+      --emerald-border: #065F46;
+
+      --accent: #FBBF24;
+      --accent-light: #78350F40;
+      --danger: #FB7185;
+      --danger-light: #88133740;
+      --blue: #38BDF8;
+      --blue-light: #07598540;
+
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+      --shadow-float: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      font-size: 15px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding-top: var(--safe-top);
+      padding-bottom: calc(var(--bottom-nav-height) + var(--safe-bottom) + 24px);
+      transition: background-color 0.25s ease, color 0.25s ease;
+      touch-action: manipulation;
+    }
+
+    /* Container */
+    .app-container {
+      width: 100%;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* Top App Bar */
+    .top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(248, 250, 249, 0.85);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 16px;
+      margin-top: calc(var(--safe-top) * -1);
+      padding-top: max(10px, var(--safe-top));
+    }
+    [data-theme="dark"] .top-bar {
+      background: rgba(9, 14, 12, 0.85);
+    }
+    .top-bar-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+    .brand-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #059669, #10B981);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      box-shadow: 0 4px 10px rgba(16, 185, 129, 0.35);
+      flex-shrink: 0;
+    }
+    .brand-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    .brand-sub {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .brand-sub .badge-pill {
+      background: var(--emerald-light);
+      color: var(--emerald);
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 6px;
+      font-size: 0.68rem;
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .icon-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+      box-shadow: var(--shadow-sm);
+    }
+    .icon-btn:active {
+      transform: scale(0.92);
+      background: var(--border-subtle);
+    }
+
+    /* Target Banner / Hero Card */
+    .hero-card {
+      background: linear-gradient(135deg, #064E3B, #065F46, #047857);
+      color: #FFFFFF;
+      border-radius: var(--radius-xl);
+      padding: 20px 22px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 12px 28px -6px rgba(4, 120, 87, 0.45);
+    }
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.3) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(8px);
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .gender-pill {
+      display: inline-flex;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: var(--radius-full);
+      padding: 3px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .gender-btn {
+      border: 0;
+      background: transparent;
+      color: rgba(255, 255, 255, 0.8);
+      padding: 4px 12px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .gender-btn.active {
+      background: #FFFFFF;
+      color: #064E3B;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-weight-row {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+    .hero-weight-start {
+      font-size: 1.8rem;
+      font-family: var(--font-display);
+      font-weight: 700;
+      opacity: 0.8;
+      text-decoration: line-through;
+      text-decoration-color: rgba(255, 255, 255, 0.5);
+    }
+    .hero-weight-arrow {
+      font-size: 1.4rem;
+      color: #A7F3D0;
+    }
+    .hero-weight-target {
+      font-size: 2.8rem;
+      font-family: var(--font-display);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      color: #FFFFFF;
+    }
+    .hero-weight-unit {
+      font-size: 1.1rem;
+      font-weight: 600;
+      opacity: 0.9;
+    }
+    .hero-weight-diff {
+      margin-left: auto;
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: var(--radius-md);
+      padding: 6px 12px;
+      text-align: right;
+    }
+    .hero-weight-diff b {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+    .hero-weight-diff span {
+      font-size: 0.68rem;
+      opacity: 0.85;
+      text-transform: uppercase;
+    }
+
+    .hero-desc {
+      font-size: 0.84rem;
+      opacity: 0.92;
+      line-height: 1.4;
+      margin-top: 8px;
+    }
+
+    .hero-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-top: 16px;
+      background: rgba(0, 0, 0, 0.18);
+      border-radius: var(--radius-lg);
+      padding: 10px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .metric-cell {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .metric-val {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.95rem;
+      line-height: 1.2;
+      color: #FFFFFF;
+    }
+    .metric-lbl {
+      font-size: 0.68rem;
+      opacity: 0.75;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    /* Day Selector Pills */
+    .day-selector-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 8px 10px;
+      box-shadow: var(--shadow-sm);
+    }
+    .day-selector-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      padding: 0 4px;
+    }
+    .day-selector-title {
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+    }
+    .today-jump-btn {
+      border: 0;
+      background: var(--emerald-light);
+      color: var(--emerald);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.2s;
+    }
+    .today-jump-btn:active {
+      transform: scale(0.95);
+    }
+    .day-pills-row {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 6px;
+    }
+    .day-pill-btn {
+      border: 1px solid var(--border);
+      background: var(--bg);
+      border-radius: var(--radius-md);
+      padding: 10px 4px 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+    .day-pill-btn.active {
+      background: var(--emerald);
+      border-color: var(--emerald);
+      color: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(5, 150, 105, 0.35);
+      transform: translateY(-2px);
+    }
+    .day-pill-name {
+      font-size: 0.78rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .day-pill-num {
+      font-size: 0.68rem;
+      opacity: 0.75;
+      font-weight: 500;
+    }
+    .day-pill-btn.active .day-pill-num {
+      opacity: 0.9;
+    }
+    .day-pill-status {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--text-subtle);
+      transition: all 0.2s;
+    }
+    .day-pill-btn.has-progress .day-pill-status {
+      background: var(--accent);
+      width: 14px;
+      height: 4px;
+      border-radius: 2px;
+    }
+    .day-pill-btn.is-complete .day-pill-status {
+      background: #FFFFFF;
+      box-shadow: 0 0 6px #FFFFFF;
+    }
+    .day-pill-btn:not(.active).is-complete .day-pill-status {
+      background: var(--emerald);
+    }
+    .day-pill-today-badge {
+      position: absolute;
+      top: -5px;
+      right: -3px;
+      background: var(--accent);
+      color: #000;
+      font-size: 0.55rem;
+      font-weight: 800;
+      padding: 1px 4px;
+      border-radius: 4px;
+      line-height: 1;
+      text-transform: uppercase;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Daily Overview Card */
+    .day-header-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 16px 18px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .day-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .day-info-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .day-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.35rem;
+      letter-spacing: -0.01em;
+    }
+    .badge-today {
+      background: var(--emerald-light);
+      color: var(--emerald);
+      border: 1px solid var(--emerald-border);
+      font-weight: 700;
+      font-size: 0.74rem;
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .day-macros {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .day-macros b {
+      color: var(--text-main);
+      font-weight: 700;
+    }
+
+    /* Radial Progress */
+    .day-progress-block {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .progress-radial {
+      position: relative;
+      width: 52px;
+      height: 52px;
+    }
+    .progress-radial svg {
+      width: 100%;
+      height: 100%;
+      transform: rotate(-90deg);
+    }
+    .progress-radial-bg {
+      fill: none;
+      stroke: var(--border-subtle);
+      stroke-width: 4;
+    }
+    .progress-radial-fill {
+      fill: none;
+      stroke: var(--emerald);
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-dasharray: 100;
+      stroke-dashoffset: 100;
+      transition: stroke-dashoffset 0.4s ease;
+    }
+    .progress-radial-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.88rem;
+    }
+    .progress-labels {
+      display: flex;
+      flex-direction: column;
+    }
+    .progress-lbl-top {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1rem;
+      line-height: 1.1;
+    }
+    .progress-lbl-sub {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    /* Water Tracker Component */
+    .water-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 16px 18px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+    .water-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .water-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .water-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--blue-light);
+      color: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+    .water-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    .water-vol {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--blue);
+    }
+    .water-vol small {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .water-bar-track {
+      height: 8px;
+      background: var(--border-subtle);
+      border-radius: var(--radius-full);
+      overflow: hidden;
+      position: relative;
+    }
+    .water-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #38BDF8, #0284C7);
+      width: 0%;
+      border-radius: var(--radius-full);
+      transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .water-cups-row {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 6px;
+    }
+    .water-cup-btn {
+      border: 1px solid var(--border);
+      background: var(--bg);
+      border-radius: 8px;
+      padding: 6px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      cursor: pointer;
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      transition: all 0.15s ease;
+    }
+    .water-cup-btn.filled {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: #FFFFFF;
+      box-shadow: 0 2px 6px rgba(2, 132, 199, 0.35);
+      transform: scale(1.04);
+    }
+    .water-cup-btn:active {
+      transform: scale(0.92);
+    }
+    .water-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .water-quick-btn {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-main);
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .water-quick-btn:active {
+      background: var(--border-subtle);
+    }
+
+    /* Meals List */
+    .meals-section {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .section-headline {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 4px;
+    }
+    .meal-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 16px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: relative;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .meal-card.is-done {
+      border-color: var(--emerald-border);
+      background: linear-gradient(180deg, var(--emerald-light) 0%, var(--surface) 100%);
+    }
+    .meal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .meal-title-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .meal-icon-tag {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: var(--emerald-light);
+      color: var(--emerald);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .meal-card.is-done .meal-icon-tag {
+      background: var(--emerald);
+      color: #FFFFFF;
+    }
+    .meal-name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.05rem;
+      line-height: 1.2;
+    }
+    .meal-time {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .meal-nutrition-pills {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .nutri-pill {
+      font-size: 0.74rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: var(--radius-full);
+      background: var(--bg);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+    }
+    .nutri-pill.cal {
+      color: var(--text-main);
+      font-weight: 700;
+    }
+    .nutri-pill.pro {
+      background: var(--emerald-light);
+      border-color: var(--emerald-border);
+      color: var(--emerald);
+      font-weight: 700;
+    }
+
+    .meal-items-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 2px 0;
+    }
+    .meal-item-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.92rem;
+      line-height: 1.4;
+      color: var(--text-main);
+    }
+    .meal-bullet {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--emerald);
+      margin-top: 8px;
+      flex-shrink: 0;
+    }
+    .meal-card.is-done .meal-item-row {
+      color: var(--text-muted);
+    }
+    .meal-card.is-done .meal-bullet {
+      background: var(--text-subtle);
+    }
+
+    .meal-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 10px;
+      border-top: 1px dashed var(--border);
+      gap: 10px;
+    }
+    .meal-footer-hint {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* Big Satisfying Checklist Button */
+    .check-btn {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      color: var(--text-main);
+      padding: 8px 18px;
+      border-radius: var(--radius-full);
+      font-family: var(--font-display);
+      font-size: 0.88rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: var(--shadow-sm);
+    }
+    .check-btn:active {
+      transform: scale(0.94);
+    }
+    .check-btn .checkbox-box {
+      width: 20px;
+      height: 20px;
+      border-radius: 6px;
+      border: 2px solid var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+    .meal-card.is-done .check-btn {
+      background: var(--emerald);
+      border-color: var(--emerald);
+      color: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(5, 150, 105, 0.35);
+    }
+    .meal-card.is-done .checkbox-box {
+      background: #FFFFFF;
+      border-color: #FFFFFF;
+      color: var(--emerald);
+    }
+
+    /* Male Extra Notice Card */
+    .male-extra-card {
+      background: var(--accent-light);
+      border: 1px solid #FDE68A;
+      border-radius: var(--radius-lg);
+      padding: 14px 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    [data-theme="dark"] .male-extra-card {
+      border-color: #92400E;
+    }
+    .male-extra-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .male-extra-text {
+      font-size: 0.84rem;
+      line-height: 1.4;
+      color: var(--text-main);
+    }
+    .male-extra-text b {
+      color: var(--accent);
+      display: block;
+      margin-bottom: 2px;
+      font-weight: 700;
+    }
+
+    /* Daily Habits Checklist */
+    .habits-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 16px 18px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .habits-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .habit-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 12px;
+      background: var(--bg);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .habit-item.checked {
+      background: var(--emerald-light);
+      border-color: var(--emerald-border);
+    }
+    .habit-label-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+    .habit-item.checked .habit-label-group {
+      text-decoration: line-through;
+      color: var(--text-muted);
+    }
+    .habit-icon {
+      font-size: 1.15rem;
+    }
+    .custom-chk {
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      border: 2px solid var(--text-subtle);
+      background: var(--surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: transparent;
+      transition: all 0.2s;
+    }
+    .habit-item.checked .custom-chk {
+      background: var(--emerald);
+      border-color: var(--emerald);
+      color: #FFFFFF;
+    }
+
+    /* Tab Pages (Single Page Navigation) */
+    .tab-content {
+      display: none;
+      flex-direction: column;
+      gap: 16px;
+      animation: fadeIn 0.25s ease;
+    }
+    .tab-content.active {
+      display: flex;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Shopping List Page */
+    .shop-summary-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 16px 18px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .shop-filter-bar {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 2px;
+    }
+    .filter-chip {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-muted);
+      padding: 5px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .filter-chip.active {
+      background: var(--text-main);
+      color: var(--bg);
+      border-color: var(--text-main);
+    }
+    .shop-cat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 16px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .shop-cat-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .shop-cat-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--emerald);
+    }
+    .shop-items-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .shop-item-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 10px;
+      border-radius: var(--radius-sm);
+      background: var(--bg);
+      border: 1px solid var(--border-subtle);
+      cursor: pointer;
+      gap: 10px;
+      transition: all 0.15s ease;
+    }
+    .shop-item-row.bought {
+      opacity: 0.55;
+      background: transparent;
+      border-color: transparent;
+    }
+    .shop-item-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .shop-item-row.bought .shop-item-left span {
+      text-decoration: line-through;
+    }
+    .shop-item-qty {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      font-family: var(--font-display);
+      white-space: nowrap;
+    }
+
+    /* Weight Log Page */
+    .weight-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .weight-input-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .weight-input {
+      flex: 1;
+      height: 48px;
+      border: 2px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--bg);
+      color: var(--text-main);
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      padding: 0 16px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .weight-input:focus {
+      border-color: var(--emerald);
+    }
+    .weight-save-btn {
+      height: 48px;
+      background: var(--emerald);
+      color: #FFFFFF;
+      border: 0;
+      border-radius: var(--radius-md);
+      padding: 0 20px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .weight-save-btn:active {
+      transform: scale(0.95);
+    }
+    .weight-history-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      max-height: 240px;
+      overflow-y: auto;
+    }
+    .weight-log-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      border-radius: var(--radius-md);
+      background: var(--bg);
+      border: 1px solid var(--border-subtle);
+      font-size: 0.88rem;
+    }
+
+    /* BMI Scale Component */
+    .bmi-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .bmi-gauge-track {
+      position: relative;
+      height: 16px;
+      border-radius: var(--radius-full);
+      display: grid;
+      grid-template-columns: 18.5fr 6.5fr 5fr 10fr;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+    .bmi-gauge-part:nth-child(1) { background: #94A3B8; }
+    .bmi-gauge-part:nth-child(2) { background: #10B981; }
+    .bmi-gauge-part:nth-child(3) { background: #F59E0B; }
+    .bmi-gauge-part:nth-child(4) { background: #EF4444; }
+    .bmi-labels-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    .bmi-pointers {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .bmi-badge-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .bmi-badge-box b {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    /* Rules & Tips Page */
+    .rules-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .rule-item {
+      display: flex;
+      gap: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .rule-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .rule-badge {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.8rem;
+      color: var(--emerald);
+      min-width: 90px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .rule-body {
+      font-size: 0.88rem;
+      line-height: 1.45;
+      color: var(--text-main);
+    }
+    .rule-body .forbidden {
+      color: var(--danger);
+      font-weight: 600;
+    }
+
+    .callout-box {
+      border-radius: var(--radius-lg);
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .callout-box.wedding {
+      background: var(--emerald-light);
+      border: 1px solid var(--emerald-border);
+    }
+    .callout-box.caution {
+      background: var(--danger-light);
+      border: 1px solid #FECDD3;
+    }
+    .callout-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.98rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .callout-body {
+      font-size: 0.86rem;
+      line-height: 1.45;
+      color: var(--text-main);
+    }
+
+    /* Food Substitution Table */
+    .swap-table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+    }
+    .swap-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      text-align: left;
+    }
+    .swap-table th, .swap-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .swap-table th {
+      background: var(--bg);
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+    }
+    .swap-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Bottom Navigation Bar for Mobile */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-top: 1px solid var(--border);
+      height: calc(var(--bottom-nav-height) + var(--safe-bottom));
+      padding-bottom: var(--safe-bottom);
+      box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.04);
+    }
+    [data-theme="dark"] .bottom-nav {
+      background: rgba(18, 27, 23, 0.92);
+      box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.4);
+    }
+    .bottom-nav-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      height: var(--bottom-nav-height);
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      align-items: center;
+      padding: 0 8px;
+    }
+    .nav-tab-btn {
+      border: 0;
+      background: transparent;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      height: 100%;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.2s;
+    }
+    .nav-tab-btn.active {
+      color: var(--emerald);
+    }
+    .nav-tab-btn.active::before {
+      content: "";
+      position: absolute;
+      top: 6px;
+      width: 24px;
+      height: 3px;
+      background: var(--emerald);
+      border-radius: var(--radius-full);
+    }
+    .nav-tab-icon {
+      font-size: 1.3rem;
+      line-height: 1;
+      margin-top: 2px;
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .nav-tab-btn.active .nav-tab-icon {
+      transform: scale(1.12);
+    }
+    .nav-tab-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    /* Confetti Canvas */
+    #confetti-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* Modal / Action sheet */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      display: none;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: var(--safe-bottom);
+    }
+    .modal-backdrop.open {
+      display: flex;
+    }
+    .modal-sheet {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+      width: 100%;
+      max-width: 520px;
+      padding: 24px 20px 20px;
+      box-shadow: var(--shadow-float);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      animation: sheetUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes sheetUp {
+      from { transform: translateY(100%); }
+      to { transform: translateY(0); }
+    }
+    .modal-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+    .modal-body {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+    .modal-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .btn-secondary {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      height: 44px;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .btn-danger {
+      background: var(--danger);
+      border: 0;
+      color: #FFFFFF;
+      height: 44px;
+      border-radius: var(--radius-md);
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    /* Toast Notification */
+    .toast-msg {
+      position: fixed;
+      bottom: calc(var(--bottom-nav-height) + var(--safe-bottom) + 16px);
+      left: 50%;
+      transform: translateX(-50%) translateY(30px);
+      background: #0F172A;
+      color: #FFFFFF;
+      border-radius: var(--radius-full);
+      padding: 10px 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      z-index: 2000;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .toast-msg.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        background: #FFFFFF;
+        color: #000000;
+        padding: 0;
+      }
+      .top-bar, .bottom-nav, .icon-btn, .check-btn, .water-card, .shop-filter-bar {
+        display: none !important;
+      }
+      .tab-content {
+        display: flex !important;
+      }
+      .app-container {
+        max-width: 100%;
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Glass Bar -->
+  <header class="top-bar">
+    <div class="top-bar-inner">
+      <div class="brand" onclick="switchTab('today')">
+        <div class="brand-icon">🥑</div>
+        <div>
+          <div class="brand-title">7 KUNLIK PARHEZ</div>
+          <div class="brand-sub">
+            <span>84 kg → 74 kg</span>
+            <span class="badge-pill">−10 KG</span>
+          </div>
+        </div>
+      </div>
+      <div class="top-actions">
+        <button class="icon-btn" id="theme-toggle-btn" title="Mavzuni almashtirish" aria-label="Mavzuni almashtirish">
+          🌙
+        </button>
+        <button class="icon-btn" id="reset-modal-btn" title="Haftani qayta boshlash" aria-label="Haftani qayta boshlash">
+          🔄
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-container">
+
+    <!-- TAB 1: KUNLIK REJA (TODAY / DAILY VIEW) -->
+    <section class="tab-content active" id="tab-today">
+      
+      <!-- Hero Goal Banner -->
+      <div class="hero-card">
+        <div class="hero-top">
+          <div class="hero-badge">
+            <span>✨</span> 1-Hafta · Qat’iy reja
+          </div>
+          <div class="gender-pill" role="group" aria-label="Jins tanlash">
+            <button class="gender-btn active" id="btn-male" data-gender="male">Erkak</button>
+            <button class="gender-btn" id="btn-female" data-gender="female">Ayol</button>
+          </div>
+        </div>
+
+        <div class="hero-weight-row">
+          <span class="hero-weight-start">84</span>
+          <span class="hero-weight-arrow">→</span>
+          <span class="hero-weight-target" id="display-target-kg">74</span>
+          <span class="hero-weight-unit">kg</span>
+          <div class="hero-weight-diff">
+            <b id="hero-diff-text">−10 kg</b>
+            <span>Maqsad</span>
+          </div>
+        </div>
+
+        <p class="hero-desc">
+          O‘zbekistondagi har qanday bozor va do‘kondan topiladigan mahsulotlar. Shakar, oq non va qovurilgan ovqat yo‘q. Yuqori oqsil (110–125 g) ochlikni oldini oladi.
+        </p>
+
+        <div class="hero-metrics-grid">
+          <div class="metric-cell">
+            <span class="metric-val" id="metric-target-cal">1450–1620</span>
+            <span class="metric-lbl">Kunlik Menyu</span>
+          </div>
+          <div class="metric-cell">
+            <span class="metric-val" id="metric-tdee">2130–2440</span>
+            <span class="metric-lbl">Sarf (TDEE)</span>
+          </div>
+          <div class="metric-cell">
+            <span class="metric-val">0,5–0,8</span>
+            <span class="metric-lbl">kg/Hafta</span>
+          </div>
+          <div class="metric-cell">
+            <span class="metric-val" id="metric-duration">12–18 h.</span>
+            <span class="metric-lbl">Davomiylik</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day Selector Row -->
+      <div class="day-selector-wrap">
+        <div class="day-selector-header">
+          <span class="day-selector-title">Kunni tanlang</span>
+          <button class="today-jump-btn" id="jump-today-btn">
+            <span>📍</span> Bugungi kunga o‘tish
+          </button>
+        </div>
+        <div class="day-pills-row" id="day-pills-container">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Selected Day Stats Header -->
+      <div class="day-header-card">
+        <div class="day-info">
+          <div class="day-info-row">
+            <h2 class="day-title" id="active-day-title">Dushanba</h2>
+            <span class="badge-today" id="active-day-badge">Bugun</span>
+          </div>
+          <div class="day-macros">
+            <span>🔥 <b id="active-day-calories">1465</b> kkal</span>
+            <span>🥩 <b id="active-day-protein">123</b> g oqsil</span>
+          </div>
+        </div>
+
+        <div class="day-progress-block">
+          <div class="progress-radial">
+            <svg viewBox="0 0 36 36">
+              <path class="progress-radial-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+              <path class="progress-radial-fill" id="day-progress-ring" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+            </svg>
+            <div class="progress-radial-text" id="day-progress-count">0/4</div>
+          </div>
+          <div class="progress-labels">
+            <span class="progress-lbl-top" id="day-progress-pct">0%</span>
+            <span class="progress-lbl-sub">Taomlar</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Water Tracker (2.5L Suv Hisoblagich) -->
+      <div class="water-card">
+        <div class="water-top">
+          <div class="water-title-wrap">
+            <div class="water-icon">💧</div>
+            <div>
+              <div class="water-title">Kunlik Suv Me’yori</div>
+              <div style="font-size:0.72rem; color:var(--text-muted)">84 kg × 30 ml = 2.5 Litr</div>
+            </div>
+          </div>
+          <div class="water-vol">
+            <span id="water-intake-liters">0.0</span> <small>/ 2.5 L</small>
+          </div>
+        </div>
+
+        <div class="water-bar-track">
+          <div class="water-bar-fill" id="water-progress-bar"></div>
+        </div>
+
+        <div class="water-cups-row" id="water-cups-container">
+          <!-- 10 cups generated via JS -->
+        </div>
+
+        <div class="water-actions">
+          <span id="water-status-tip">Har ovqatdan 20 daqiqa oldin 1 stakan suv iching.</span>
+          <button class="water-quick-btn" id="water-plus-btn">+ 1 Stakan (250ml)</button>
+        </div>
+      </div>
+
+      <!-- Meal Cards for Selected Day -->
+      <div class="meals-section">
+        <div class="section-headline">
+          <span>Kunlik Taomnoma</span>
+          <span style="font-size:0.78rem; font-weight:500; color:var(--text-muted)">Yegach ptichka qo‘ying</span>
+        </div>
+
+        <div id="meals-container" style="display:flex; flex-direction:column; gap:12px;">
+          <!-- Dynamically generated meal cards -->
+        </div>
+
+        <!-- Male Extra Portion Note -->
+        <div class="male-extra-card" id="male-extra-box">
+          <div class="male-extra-icon">⚡️</div>
+          <div class="male-extra-text">
+            <b>Erkaklar uchun qo‘shimcha norma:</b>
+            Tushlikka +30 g javdar noni, uxlashdan 2 soat oldin 200 ml kefir 1% (+150 kkal, +8 g oqsil).
+          </div>
+        </div>
+      </div>
+
+      <!-- Daily Habits Checklist -->
+      <div class="habits-card">
+        <div class="habits-title">
+          <span>Kunlik Muhim Qoidalar & Odatlar</span>
+          <span style="font-size:0.75rem; color:var(--emerald); font-weight:700" id="habits-count">0/5</span>
+        </div>
+
+        <div class="habit-item" data-habit="steps" onclick="toggleHabit('steps')">
+          <div class="habit-label-group">
+            <span class="habit-icon">👟</span>
+            <span>8 000 – 10 000 qadam yurildi</span>
+          </div>
+          <div class="custom-chk" id="habit-chk-steps">✓</div>
+        </div>
+
+        <div class="habit-item" data-habit="sugar" onclick="toggleHabit('sugar')">
+          <div class="habit-label-group">
+            <span class="habit-icon">🚫</span>
+            <span>Shakar, oq non va gazli ichimlik olinmadi</span>
+          </div>
+          <div class="custom-chk" id="habit-chk-sugar">✓</div>
+        </div>
+
+        <div class="habit-item" data-habit="dinner" onclick="toggleHabit('dinner')">
+          <div class="habit-label-group">
+            <span class="habit-icon">🌙</span>
+            <span>Kechki ovqat uyqudan 3 soat oldin yeyildi</span>
+          </div>
+          <div class="custom-chk" id="habit-chk-dinner">✓</div>
+        </div>
+
+        <div class="habit-item" data-habit="workout" onclick="toggleHabit('workout')">
+          <div class="habit-label-group">
+            <span class="habit-icon">💪</span>
+            <span>30–40 daqiqa yengil mashq / otjimaniya</span>
+          </div>
+          <div class="custom-chk" id="habit-chk-workout">✓</div>
+        </div>
+
+        <div class="habit-item" data-habit="sleep" onclick="toggleHabit('sleep')">
+          <div class="habit-label-group">
+            <span class="habit-icon">🛌</span>
+            <span>7–8 soat to‘liq va sifatli uyqu</span>
+          </div>
+          <div class="custom-chk" id="habit-chk-sleep">✓</div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- TAB 2: HAFTALIK TO'LIQ MENYU (FULL 7-DAY ACCORDION) -->
+    <section class="tab-content" id="tab-week">
+      <div class="day-header-card">
+        <div>
+          <h2 class="day-title">Haftalik To‘liq Jadval</h2>
+          <p style="font-size:0.84rem; color:var(--text-muted); margin-top:2px;">
+            Barcha 7 kunlik taomnomani bir joyda ko‘ring va istalgan kunga ptichka qo‘yib boring.
+          </p>
+        </div>
+      </div>
+
+      <div id="week-all-container" style="display:flex; flex-direction:column; gap:14px;">
+        <!-- Generated all 7 days -->
+      </div>
+    </section>
+
+    <!-- TAB 3: XARID RO'YXATI (SHOPPING LIST WITH CHECKLIST) -->
+    <section class="tab-content" id="tab-shop">
+      <div class="shop-summary-card">
+        <div>
+          <h2 class="day-title">Bozorlik & Xarid Ro‘yxati</h2>
+          <p style="font-size:0.82rem; color:var(--text-muted)" id="shop-progress-text">0 / 28 mahsulot olindi</p>
+        </div>
+        <button class="water-quick-btn" onclick="clearShopChecks()">Ro‘yxatni tozalash</button>
+      </div>
+
+      <div class="shop-filter-bar">
+        <button class="filter-chip active" onclick="filterShop('all', this)">Barchasi</button>
+        <button class="filter-chip" onclick="filterShop('pending', this)">Olinmaganlar</button>
+        <button class="filter-chip" onclick="filterShop('bought', this)">Olinganlar</button>
+      </div>
+
+      <div id="shop-categories-container" style="display:flex; flex-direction:column; gap:14px;">
+        <!-- Populated by JS -->
+      </div>
+    </section>
+
+    <!-- TAB 4: VAZN & BMI KUZATUV (WEIGHT & BMI LOG) -->
+    <section class="tab-content" id="tab-weight">
+      <div class="weight-card">
+        <div>
+          <h2 class="day-title">Vazn Nazorati & Natija</h2>
+          <p style="font-size:0.84rem; color:var(--text-muted); margin-top:2px;">
+            Haftada 1 marta nahorga tarozi o‘lchamini kiritib boring. Boshlang‘ich: 84 kg · Maqsad: 74 kg.
+          </p>
+        </div>
+
+        <div class="weight-input-row">
+          <input type="number" step="0.1" id="current-weight-input" class="weight-input" placeholder="84.0" />
+          <button class="weight-save-btn" onclick="saveNewWeight()">
+            <span>💾</span> Saqlash
+          </button>
+        </div>
+
+        <div style="background:var(--bg); border:1px solid var(--border); border-radius:var(--radius-md); padding:12px; display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <div style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase;">Umumiy kamayish</div>
+            <div style="font-family:var(--font-display); font-size:1.3rem; font-weight:700; color:var(--emerald)" id="weight-loss-total">0.0 kg</div>
+          </div>
+          <div>
+            <div style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase;">Maqsadgacha qoldi</div>
+            <div style="font-family:var(--font-display); font-size:1.3rem; font-weight:700;" id="weight-remaining">10.0 kg</div>
+          </div>
+        </div>
+
+        <div class="section-headline">
+          <span style="font-size:0.95rem">O‘lchovlar Tarixi</span>
+        </div>
+        <div class="weight-history-list" id="weight-history-container">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- BMI Card -->
+      <div class="bmi-card">
+        <h3 class="day-title" style="font-size:1.15rem">Tana Massasi Indeksi (BMI)</h3>
+        <p style="font-size:0.82rem; color:var(--text-muted)">
+          Bo‘y: 170 sm, Yosh: 26 yosh. BMI = Vazn / (Bo‘y m)². Me’yor: 18.5 – 24.9.
+        </p>
+
+        <div class="bmi-gauge-track">
+          <div class="bmi-gauge-part" title="Kam vazn (<18.5)"></div>
+          <div class="bmi-gauge-part" title="Me’yor (18.5-25)"></div>
+          <div class="bmi-gauge-part" title="Ortiqcha vazn (25-30)"></div>
+          <div class="bmi-gauge-part" title="Semizlik (>30)"></div>
+        </div>
+        <div class="bmi-labels-row">
+          <span>16</span>
+          <span>18.5</span>
+          <span>25.0 (Me’yor)</span>
+          <span>30.0</span>
+          <span>35+</span>
+        </div>
+
+        <div class="bmi-pointers">
+          <div class="bmi-badge-box">
+            <span style="font-size:0.75rem; color:var(--text-muted)">Boshlang‘ich BMI (84 kg)</span>
+            <b style="color:var(--accent)">29.1 (Ortiqcha)</b>
+          </div>
+          <div class="bmi-badge-box">
+            <span style="font-size:0.75rem; color:var(--text-muted)">Maqsadli BMI (74 kg)</span>
+            <b style="color:var(--emerald)">25.6 (Me’yorga yaqin)</b>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 5: QOIDALAR & MASLAHATLAR (RULES & SWAPS) -->
+    <section class="tab-content" id="tab-rules">
+      
+      <div class="rules-card">
+        <h2 class="day-title">Qat’iy Qoidalar</h2>
+        <div class="rule-item">
+          <div class="rule-badge">Suv</div>
+          <div class="rule-body">Kuniga 2,5 litr. Har bir ovqatdan 20 daqiqa oldin 1 stakan iliq suv iching.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-badge">Taqiqlanadi</div>
+          <div class="rule-body">
+            <span class="forbidden">Shakar, pishiriq, oq non, patir, somsa, manti, chuchvara, mayonez, kolbasa, chips, gazli ichimlik va spirtli ichimliklar.</span>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-badge">Yog‘</div>
+          <div class="rule-body">Kuniga 2–3 choy qoshiqdan oshmasin. Qovurmang: faqat qaynatish, duxovka yoki bug‘da pishirish.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-badge">Choy & Qahva</div>
+          <div class="rule-body">Faqat shakarsiz. Ko‘k choy cheklanmagan, metabolizmni tezlashtiradi.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-badge">Kechki ovqat</div>
+          <div class="rule-body">Uxlashdan kamida 3 soat oldin. Undan keyin faqat suv yoki shakarsiz ko‘k choy.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-badge">Harakat</div>
+          <div class="rule-body">Kuniga 8–10 ming qadam. Haftada 3 marta 30–40 daqiqa: o‘tirib-turish, otjimaniya, plank.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-badge">Uyqu</div>
+          <div class="rule-body">Kamida 7–8 soat. Uyqu kam bo‘lsa, organizm grelin (ochlik gormoni) ishlab chiqaradi.</div>
+        </div>
+      </div>
+
+      <div class="callout-box wedding">
+        <div class="callout-title">
+          <span>🍲</span> Osh yoki To‘yga Borsangiz Nima Qilish Kerak?
+        </div>
+        <div class="callout-body">
+          1 kichik likopcha osh (≈200 g, ≈450 kkal), go‘shtining yog‘siz qismi va mo‘l achchiq-chuchuk (yog‘siz). Non, somsa, shirinlik va gazli suvni olmang. O‘sha kuni kechki ovqatni faqat yangi sabzavotlar va 2 ta qaynatilgan tuxum bilan almashtiring.
+        </div>
+      </div>
+
+      <div class="callout-box caution">
+        <div class="callout-title">
+          <span>⚠️</span> Ehtiyot Choralari
+        </div>
+        <div class="callout-body">
+          Kaloriyani belgilangandan pastga tushirmang: haddan ziyod ochlik mushak va immunitetni zaiflashtiradi, tashlagan vazn tez qaytadi. Qandli diabet, oshqozon yoki buyrak xastaligi bo‘lsa, shifokor bilan maslahatlashing.
+        </div>
+      </div>
+
+      <!-- Food Swap Table -->
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        <h3 class="day-title" style="font-size:1.1rem">Mahsulotlarni Almashtirish Jadvali</h3>
+        <p style="font-size:0.8rem; color:var(--text-muted)">Biror mahsulot yoqmasa yoki topilmasa, quyidagilar bilan almashtiring:</p>
+        <div class="swap-table-wrap">
+          <table class="swap-table">
+            <thead>
+              <tr>
+                <th>Menyuda</th>
+                <th>O‘rniga Almashtirish</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Tovuq ko‘kragi</td><td>Kurka filesi, yog‘siz mol go‘shti, laqqa yoki xek baliq</td></tr>
+              <tr><td>Grechka</td><td>Bulgur, suli yormasi, perlovka, jigarrang guruch</td></tr>
+              <tr><td>Tvorog</td><td>Kam yog‘li suzma, tabiiy shakarsiz yogurt</td></tr>
+              <tr><td>Kefir 1%</td><td>Qatiq 1–2.5%, ayron (kam tuzli)</td></tr>
+              <tr><td>Xurmo, anor</td><td>Olma, nok, mandarin, behi, kivi</td></tr>
+              <tr><td>Javdar noni (30g)</td><td>2 dona donli xlebsi yoki 2 qoshiq pishgan grechka</td></tr>
+              <tr><td>Xek / Mintay</td><td>Zog‘ora baliq, sudak, o‘z sharbatidagi tunets</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Mobile Bottom Navigation Bar -->
+  <nav class="bottom-nav">
+    <div class="bottom-nav-inner">
+      <button class="nav-tab-btn active" onclick="switchTab('today')" id="nav-btn-today">
+        <span class="nav-tab-icon">📅</span>
+        <span class="nav-tab-label">Bugun</span>
+      </button>
+      <button class="nav-tab-btn" onclick="switchTab('week')" id="nav-btn-week">
+        <span class="nav-tab-icon">📋</span>
+        <span class="nav-tab-label">7 Kunlik</span>
+      </button>
+      <button class="nav-tab-btn" onclick="switchTab('shop')" id="nav-btn-shop">
+        <span class="nav-tab-icon">🛒</span>
+        <span class="nav-tab-label">Xaridlar</span>
+      </button>
+      <button class="nav-tab-btn" onclick="switchTab('weight')" id="nav-btn-weight">
+        <span class="nav-tab-icon">⚖️</span>
+        <span class="nav-tab-label">Vazn</span>
+      </button>
+      <button class="nav-tab-btn" onclick="switchTab('rules')" id="nav-btn-rules">
+        <span class="nav-tab-icon">💡</span>
+        <span class="nav-tab-label">Qoidalar</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Canvas for Confetti -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Reset Confirmation Modal -->
+  <div class="modal-backdrop" id="reset-modal">
+    <div class="modal-sheet">
+      <div class="modal-title">Haftani yangitdan boshlash?</div>
+      <div class="modal-body">
+        Barcha belgilangan ovqat ptichkalari va suv hisoblagichi qayta tiklanadi (0 ga tenglanadi). Tarixdagi vazn o‘lchovlari saqlanib qoladi.
+      </div>
+      <div class="modal-actions">
+        <button class="btn-secondary" onclick="closeResetModal()">Bekor qilish</button>
+        <button class="btn-danger" onclick="confirmResetAll()">Ha, tozalash</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-msg" id="toast-msg">
+    <span id="toast-icon">✨</span>
+    <span id="toast-text">Muvaffaqiyatli saqlandi!</span>
+  </div>
+
+  <script>
+    /* =====================================================================
+       DIET DATA & NUTRITION ENGINE
+       ===================================================================== */
+    const MEAL_TYPES = [
+      { id: "m0", name: "Nonushta", time: "07:30 – 08:30", icon: "🍳" },
+      { id: "m1", name: "Tushlik", time: "12:30 – 13:30", icon: "🍲" },
+      { id: "m2", name: "Gazak (Poldnik)", time: "16:00 – 16:30", icon: "🍏" },
+      { id: "m3", name: "Kechki ovqat", time: "18:30 – 19:30", icon: "🥗" }
+    ];
+
+    const DAYS_DATA = [
+      {
+        name: "Dushanba",
+        short: "Dush",
+        meals: [
+          { cal: 375, pro: 19, items: ["Suli bo‘tqasi: 50 g gerkules (suvda, ½ olma va dolchin bilan)", "2 ta qaynatilgan tuxum", "Ko‘k choy (shakarsiz)"] },
+          { cal: 535, pro: 56, items: ["Grechka: 60 g quruq (≈180 g pishgan)", "Qaynatilgan tovuq ko‘kragi: 150 g", "Karam-sabzi salati, 1 choy qoshiq o‘simlik yog‘i bilan"] },
+          { cal: 265, pro: 10, items: ["Kefir 1%: 250 ml", "1 dona xurmo", "Yong‘oq mag‘zi: 15 g (3 dona)"] },
+          { cal: 290, pro: 38, items: ["Duxovkada xek yoki mintay balig‘i: 200 g", "Bug‘da sabzavotlar (brokkoli, gulkaram, sabzi): 250 g", "1 choy qoshiq yog‘ va limon sharbati"] }
+        ]
+      },
+      {
+        name: "Seshanba",
+        short: "Sesh",
+        meals: [
+          { cal: 340, pro: 27, items: ["Tvorog 5%: 150 g", "1 dona yangi olma", "Javdar noni: 30 g (bodring tilimlari bilan)"] },
+          { cal: 440, pro: 27, items: ["Mosh sho‘rva: 400 ml (80 g yog‘siz mol go‘shti bilan)", "Pomidor, bodring, rayhon salati (limon bilan)", "Javdar noni: 30 g"] },
+          { cal: 235, pro: 13, items: ["2 ta qaynatilgan tuxum", "1 dona yangi bodring", "1 dona xurmo"] },
+          { cal: 345, pro: 48, items: ["Duxovkada tovuq ko‘kragi: 150 g", "Duxovkada pishirilgan qovoq: 150 g", "Karam salati (limon sharbati bilan)"] }
+        ]
+      },
+      {
+        name: "Chorshanba",
+        short: "Chor",
+        meals: [
+          { cal: 320, pro: 18, items: ["Omlet: 2 butun tuxum + 1 tuxum oqi (pomidor va ko‘katlar bilan, yog‘siz tovada)", "Javdar noni: 30 g", "1 dona nok"] },
+          { cal: 520, pro: 39, items: ["Karam dimlama: 120 g yog‘siz mol go‘shti, karam, sabzi, piyoz, pomidor", "Grechka: 40 g quruq", "1 choy qoshiq yog‘"] },
+          { cal: 180, pro: 18, items: ["Tvorog 2%: 100 g", "1 dona olma"] },
+          { cal: 320, pro: 38, items: ["Duxovkada zog‘ora baliq: 200 g", "Lavlagi salati: 150 g qaynatilgan lavlagi, ozgina sarimsoq, 1 choy qoshiq yog‘"] }
+        ]
+      },
+      {
+        name: "Payshanba",
+        short: "Pay",
+        meals: [
+          { cal: 375, pro: 13, items: ["Suli bo‘tqasi: 50 g gerkules (10 g maydalangan yong‘oq bilan)", "½ dona anor donalari", "1 ta qaynatilgan tuxum"] },
+          { cal: 420, pro: 51, items: ["Tovuq sho‘rva: 450 ml (150 g tovuq filesi, 1 dona kichik kartoshka, sabzi, ko‘kat)", "Javdar noni: 30 g"] },
+          { cal: 220, pro: 27, items: ["Tvorog 2%: 150 g", "1 dona xurmo"] },
+          { cal: 330, pro: 28, items: ["Bug‘da tefteli: 120 g yog‘siz go‘sht qiymasi", "Bug‘da sabzavotlar aralashmasi: 200 g", "1 choy qoshiq yog‘"] }
+        ]
+      },
+      {
+        name: "Juma",
+        short: "Juma",
+        meals: [
+          { cal: 300, pro: 20, items: ["2 ta qaynatilgan tuxum", "Suzma: 40 g (to‘g‘ralgan yangi ko‘katlar bilan)", "Javdar noni: 30 g (pomidor bilan)"] },
+          { cal: 430, pro: 27, items: ["Yengil mastava: 400 ml (30 g guruch, 80 g yog‘siz mol go‘shti, sabzavotlar)", "Achchiq-chuchuk salati: pomidor, piyoz, rayhon", "Javdar noni: 30 g"] },
+          { cal: 280, pro: 28, items: ["Tvorog 2%: 150 g", "1 dona olma", "½ dona anor donalari"] },
+          { cal: 330, pro: 48, items: ["Duxovkada tovuq ko‘kragi: 150 g", "Karam-sabzi salati (1 choy qoshiq yog‘ bilan)"] }
+        ]
+      },
+      {
+        name: "Shanba",
+        short: "Shan",
+        meals: [
+          { cal: 295, pro: 27, items: ["Tvorog 5%: 150 g", "½ dona anor donalari", "Yong‘oq mag‘zi: 10 g"] },
+          { cal: 525, pro: 42, items: ["Grechka: 60 g quruq", "Mol go‘shti gulyash: 120 g yog‘siz mol go‘shti, piyoz, sabzi, pomidor", "Bodring-pomidor salati"] },
+          { cal: 230, pro: 13, items: ["2 ta qaynatilgan tuxum", "1 dona olma"] },
+          { cal: 270, pro: 35, items: ["Duxovkada xek yoki mintay: 200 g", "Duxovkada pishirilgan qovoq va sabzi: 200 g", "1 choy qoshiq yog‘"] }
+        ]
+      },
+      {
+        name: "Yakshanba",
+        short: "Yak",
+        meals: [
+          { cal: 310, pro: 18, items: ["Omlet: 2 ta butun tuxum + 1 oq tuxum (ko‘katlar bilan)", "Javdar noni: 30 g", "1 dona xurmo"] },
+          { cal: 400, pro: 35, items: ["No‘xat sho‘rva: 400 ml (40 g no‘xat, 80 g yog‘siz mol go‘shti)", "Ko‘katli yangi salat (limon sharbati bilan)"] },
+          { cal: 245, pro: 10, items: ["Kefir 1%: 250 ml", "1 dona olma", "Yong‘oq: 10 g"] },
+          { cal: 350, pro: 48, items: ["Qaynatilgan tovuq ko‘kragi: 150 g", "Lavlagi salati (1 choy qoshiq yog‘ bilan)"] }
+        ]
+      }
+    ];
+
+    const MALE_EXTRA = { cal: 150, pro: 8 };
+
+    const SHOPPING_DATA = [
+      {
+        cat: "Go‘sht, Baliq, Tuxum",
+        icon: "🥩",
+        items: [
+          { id: "s1", name: "Tovuq ko‘kragi (file)", qty: "≈ 1 kg" },
+          { id: "s2", name: "Yog‘siz mol go‘shti", qty: "≈ 700 g" },
+          { id: "s3", name: "Yog‘siz go‘sht qiymasi", qty: "≈ 170 g" },
+          { id: "s4", name: "Xek yoki Mintay filesi", qty: "≈ 550 g" },
+          { id: "s5", name: "Zog‘ora baliq (yangi)", qty: "1 dona (≈ 400g)" },
+          { id: "s6", name: "Tovuq tuxumi", qty: "15 dona" }
+        ]
+      },
+      {
+        cat: "Sut Mahsulotlari",
+        icon: "🥛",
+        items: [
+          { id: "s7", name: "Tvorog 5%", qty: "300 g" },
+          { id: "s8", name: "Tvorog 2%", qty: "400 g" },
+          { id: "s9", name: "Kefir 1%", qty: "0.5 L (Erkaklar: +1.4 L)" },
+          { id: "s10", name: "Suzma (kam yog‘li)", qty: "40 g" }
+        ]
+      },
+      {
+        cat: "Yorma & Non",
+        icon: "🌾",
+        items: [
+          { id: "s11", name: "Grechka", qty: "160 g" },
+          { id: "s12", name: "Gerkules (suli)", qty: "100 g" },
+          { id: "s13", name: "Mosh", qty: "50 g" },
+          { id: "s14", name: "No‘xat", qty: "40 g" },
+          { id: "s15", name: "Guruch", qty: "30 g" },
+          { id: "s16", name: "Javdar (qora) non", qty: "1 buxanka" }
+        ]
+      },
+      {
+        cat: "Meva & Yong‘oq",
+        icon: "🍎",
+        items: [
+          { id: "s17", name: "Olma (ko‘k yoki qizil)", qty: "6 dona" },
+          { id: "s18", name: "Xurmo (korolyok)", qty: "4 dona" },
+          { id: "s19", name: "Anor", qty: "2 dona" },
+          { id: "s20", name: "Nok", qty: "1 dona" },
+          { id: "s21", name: "Yong‘oq mag‘zi", qty: "50 g" }
+        ]
+      },
+      {
+        cat: "Sabzavotlar",
+        icon: "🥦",
+        items: [
+          { id: "s22", name: "Pomidor va Bodring", qty: "1 kg dan" },
+          { id: "s23", name: "Karam", qty: "1 kichik bosh" },
+          { id: "s24", name: "Sabzi", qty: "1 kg" },
+          { id: "s25", name: "Qovoq", qty: "500 g" },
+          { id: "s26", name: "Brokkoli yoki gulkaram", qty: "300 g" },
+          { id: "s27", name: "Lavlagi", qty: "2 dona" },
+          { id: "s28", name: "Piyoz va Kartoshka", qty: "4 dona piyoz + 1 kartoshka" }
+        ]
+      },
+      {
+        cat: "Ziravor & Choy",
+        icon: "🌿",
+        items: [
+          { id: "s29", name: "Yangi ko‘katlar (ukrop, kashnich, rayhon)", qty: "Har kuni" },
+          { id: "s30", name: "Limon", qty: "2 dona" },
+          { id: "s31", name: "Sarimsoq, dolchin, ziravor", qty: "Ozgina" },
+          { id: "s32", name: "O‘simlik yog‘i", qty: "Kichik shisha" },
+          { id: "s33", name: "Ko‘k choy (shakarsiz)", qty: "1 quti" }
+        ]
+      }
+    ];
+
+    /* =====================================================================
+       STATE MANAGEMENT & LOCAL STORAGE
+       ===================================================================== */
+    const Storage = {
+      get(k, fallback = null) {
+        try {
+          const val = localStorage.getItem("diet7_" + k);
+          return val ? JSON.parse(val) : fallback;
+        } catch (e) {
+          return fallback;
+        }
+      },
+      set(k, val) {
+        try {
+          localStorage.setItem("diet7_" + k, JSON.stringify(val));
+        } catch (e) {}
+      }
+    };
+
+    // Current real-world day index: 0 = Mon, ..., 6 = Sun
+    const realDayIdx = (new Date().getDay() + 6) % 7;
+    let selectedDayIdx = realDayIdx;
+    let gender = Storage.get("gender", "male");
+    let theme = Storage.get("theme", "light");
+    let doneMeals = Storage.get("done_meals", {}); // { "d0m0": true, ... }
+    let waterLog = Storage.get("water_log", {});   // { "d0": 6, ... } cups count
+    let habitsLog = Storage.get("habits_log", {}); // { "d0_steps": true, ... }
+    let shopChecks = Storage.get("shop_checks", {}); // { "s1": true, ... }
+    let weightHistory = Storage.get("weight_history", [
+      { date: "Boshlang‘ich", weight: 84.0 }
+    ]);
+    let currentShopFilter = "all";
+
+    /* =====================================================================
+       INITIALIZATION
+       ===================================================================== */
+    function init() {
+      // Apply theme
+      applyTheme(theme);
+
+      // Render Day Selector Pills
+      renderDayPills();
+
+      // Render Active Day
+      updateActiveDayView();
+
+      // Render All 7 Days for Tab 2
+      renderWeekFullView();
+
+      // Render Shopping List
+      renderShoppingList();
+
+      // Render Weight History
+      renderWeightHistory();
+
+      // Setup event listeners
+      setupListeners();
+    }
+
+    function applyTheme(t) {
+      theme = t;
+      document.documentElement.setAttribute("data-theme", t);
+      document.getElementById("theme-toggle-btn").textContent = t === "dark" ? "☀️" : "🌙";
+      Storage.set("theme", t);
+    }
+
+    function triggerHaptic() {
+      if (navigator.vibrate) {
+        try { navigator.vibrate(12); } catch (e) {}
+      }
+    }
+
+    function showToast(text, icon = "✨") {
+      const el = document.getElementById("toast-msg");
+      document.getElementById("toast-text").textContent = text;
+      document.getElementById("toast-icon").textContent = icon;
+      el.classList.add("show");
+      setTimeout(() => el.classList.remove("show"), 2400);
+    }
+
+    /* =====================================================================
+       DAY PILLS & ACTIVE DAY VIEW
+       ===================================================================== */
+    function renderDayPills() {
+      const container = document.getElementById("day-pills-container");
+      container.innerHTML = DAYS_DATA.map((d, idx) => {
+        const isToday = idx === realDayIdx;
+        const isActive = idx === selectedDayIdx;
+        const doneCount = [0, 1, 2, 3].filter(mi => doneMeals[`d${idx}m${mi}`]).length;
+        const isComplete = doneCount === 4;
+        const hasProg = doneCount > 0 && !isComplete;
+
+        let statusClass = "";
+        if (isComplete) statusClass = "is-complete";
+        else if (hasProg) statusClass = "has-progress";
+
+        return `
+          <button class="day-pill-btn ${isActive ? 'active' : ''} ${statusClass}" onclick="selectDay(${idx})" id="day-pill-${idx}">
+            ${isToday ? '<span class="day-pill-today-badge">Bugun</span>' : ''}
+            <span class="day-pill-name">${d.short}</span>
+            <span class="day-pill-num">${idx + 1}-kun</span>
+            <div class="day-pill-status"></div>
+          </button>
+        `;
+      }).join("");
+    }
+
+    function selectDay(idx) {
+      selectedDayIdx = idx;
+      renderDayPills();
+      updateActiveDayView();
+      triggerHaptic();
+    }
+
+    function updateActiveDayView() {
+      const day = DAYS_DATA[selectedDayIdx];
+      const isMale = gender === "male";
+      const extraCal = isMale ? MALE_EXTRA.cal : 0;
+      const extraPro = isMale ? MALE_EXTRA.pro : 0;
+
+      // Header texts
+      document.getElementById("active-day-title").textContent = day.name;
+      const isToday = selectedDayIdx === realDayIdx;
+      document.getElementById("active-day-badge").style.display = isToday ? "inline-block" : "none";
+
+      const totalCal = day.meals.reduce((s, m) => s + m.cal, 0) + extraCal;
+      const totalPro = day.meals.reduce((s, m) => s + m.pro, 0) + extraPro;
+      document.getElementById("active-day-calories").textContent = totalCal.toLocaleString("uz-UZ");
+      document.getElementById("active-day-protein").textContent = totalPro;
+
+      // Male extra card visibility
+      document.getElementById("male-extra-box").style.display = isMale ? "flex" : "none";
+
+      // Progress Calculation
+      const doneCount = [0, 1, 2, 3].filter(mi => doneMeals[`d${selectedDayIdx}m${mi}`]).length;
+      const pct = Math.round((doneCount / 4) * 100);
+      document.getElementById("day-progress-count").textContent = `${doneCount}/4`;
+      document.getElementById("day-progress-pct").textContent = `${pct}%`;
+      const strokeOffset = 100 - pct;
+      document.getElementById("day-progress-ring").style.strokeDashoffset = strokeOffset;
+
+      // Render Meal Cards for active day
+      const mealsContainer = document.getElementById("meals-container");
+      mealsContainer.innerHTML = day.meals.map((m, mi) => {
+        const mealId = `d${selectedDayIdx}m${mi}`;
+        const isDone = !!doneMeals[mealId];
+        const mMeta = MEAL_TYPES[mi];
+
+        return `
+          <article class="meal-card ${isDone ? 'is-done' : ''}" id="card-${mealId}">
+            <div class="meal-header">
+              <div class="meal-title-group">
+                <div class="meal-icon-tag">${mMeta.icon}</div>
+                <div>
+                  <div class="meal-name">${mMeta.name}</div>
+                  <div class="meal-time">${mMeta.time}</div>
+                </div>
+              </div>
+              <div class="meal-nutrition-pills">
+                <span class="nutri-pill cal">🔥 ${m.cal} kkal</span>
+                <span class="nutri-pill pro">🥩 ${m.pro} g</span>
+              </div>
+            </div>
+
+            <ul class="meal-items-list">
+              ${m.items.map(item => `
+                <li class="meal-item-row">
+                  <span class="meal-bullet"></span>
+                  <span>${item}</span>
+                </li>
+              `).join("")}
+            </ul>
+
+            <div class="meal-footer">
+              <span class="meal-footer-hint">${isDone ? 'Taom iste’mol qilindi' : 'Ovqatlangach tugmani bosing'}</span>
+              <button class="check-btn" onclick="toggleMeal('${mealId}')">
+                <span class="checkbox-box">${isDone ? '✓' : ''}</span>
+                <span>${isDone ? 'Yedim ✓' : 'Yedim'}</span>
+              </button>
+            </div>
+          </article>
+        `;
+      }).join("");
+
+      // Update Water Tracker
+      updateWaterUI();
+
+      // Update Daily Habits
+      updateHabitsUI();
+    }
+
+    /* =====================================================================
+       MEAL TOGGLE & CELEBRATION
+       ===================================================================== */
+    function toggleMeal(mealId) {
+      triggerHaptic();
+      if (doneMeals[mealId]) {
+        delete doneMeals[mealId];
+      } else {
+        doneMeals[mealId] = true;
+        showToast("Taom belgilandi! Yaxshi ketmoqdasiz 💪", "✅");
+      }
+      Storage.set("done_meals", doneMeals);
+      
+      updateActiveDayView();
+      renderDayPills();
+      renderWeekFullView();
+
+      // Check if all 4 meals are completed for the active day
+      const doneCount = [0, 1, 2, 3].filter(mi => doneMeals[`d${selectedDayIdx}m${mi}`]).length;
+      if (doneCount === 4) {
+        triggerConfetti();
+        showToast("Tabriklaymiz! Kunlik taomnoma 100% bajarildi! 🎉", "🏆");
+      }
+    }
+
+    /* =====================================================================
+       WATER TRACKER (2.5L / 10 CUPS)
+       ===================================================================== */
+    function updateWaterUI() {
+      const dayKey = `d${selectedDayIdx}`;
+      const cups = waterLog[dayKey] || 0;
+      const liters = (cups * 0.25).toFixed(2);
+      const pct = Math.min(100, Math.round((cups / 10) * 100));
+
+      document.getElementById("water-intake-liters").textContent = liters;
+      document.getElementById("water-progress-bar").style.width = pct + "%";
+
+      // Render 10 cups
+      const cupsContainer = document.getElementById("water-cups-container");
+      let cupsHTML = "";
+      for (let i = 1; i <= 10; i++) {
+        const isFilled = i <= cups;
+        cupsHTML += `
+          <button class="water-cup-btn ${isFilled ? 'filled' : ''}" onclick="setWaterCups(${i})">
+            <span>${isFilled ? '💧' : '🥛'}</span>
+            <span>${i * 250}ml</span>
+          </button>
+        `;
+      }
+      cupsContainer.innerHTML = cupsHTML;
+
+      // Status text
+      const statusTip = document.getElementById("water-status-tip");
+      if (cups === 0) statusTip.textContent = "Tonggi 1-stakan iliq suv bilan boshlang.";
+      else if (cups < 5) statusTip.textContent = "Davom eting: har ovqatdan 20 daqiqa oldin iching.";
+      else if (cups < 10) statusTip.textContent = "Ajoyib natija! Kunlik me’yorga oz qoldi.";
+      else statusTip.textContent = "Barakalla! Kunlik 2.5L suv me’yori to‘liq bajarildi! 💧";
+    }
+
+    function setWaterCups(targetCount) {
+      triggerHaptic();
+      const dayKey = `d${selectedDayIdx}`;
+      const current = waterLog[dayKey] || 0;
+      if (current === targetCount) {
+        waterLog[dayKey] = targetCount - 1;
+      } else {
+        waterLog[dayKey] = targetCount;
+        if (targetCount === 10) {
+          triggerConfetti();
+          showToast("2.5 Litr suv me’yori bajarildi! 💧", "🎉");
+        }
+      }
+      Storage.set("water_log", waterLog);
+      updateWaterUI();
+    }
+
+    document.getElementById("water-plus-btn").addEventListener("click", () => {
+      const dayKey = `d${selectedDayIdx}`;
+      const current = waterLog[dayKey] || 0;
+      if (current < 10) {
+        setWaterCups(current + 1);
+      } else {
+        showToast("Kunlik 2.5 L me’yor allaqachon bajarilgan! 💧", "✅");
+      }
+    });
+
+    /* =====================================================================
+       HABITS TRACKER
+       ===================================================================== */
+    function updateHabitsUI() {
+      const habits = ["steps", "sugar", "dinner", "workout", "sleep"];
+      let checkedCount = 0;
+      habits.forEach(h => {
+        const key = `d${selectedDayIdx}_${h}`;
+        const isDone = !!habitsLog[key];
+        const itemEl = document.querySelector(`.habit-item[data-habit="${h}"]`);
+        if (itemEl) {
+          itemEl.classList.toggle("checked", isDone);
+        }
+        if (isDone) checkedCount++;
+      });
+      document.getElementById("habits-count").textContent = `${checkedCount}/5`;
+    }
+
+    function toggleHabit(h) {
+      triggerHaptic();
+      const key = `d${selectedDayIdx}_${h}`;
+      if (habitsLog[key]) {
+        delete habitsLog[key];
+      } else {
+        habitsLog[key] = true;
+      }
+      Storage.set("habits_log", habitsLog);
+      updateHabitsUI();
+    }
+
+    /* =====================================================================
+       TAB 2: FULL 7-DAY ACCORDION VIEW
+       ===================================================================== */
+    function renderWeekFullView() {
+      const container = document.getElementById("week-all-container");
+      const isMale = gender === "male";
+      const extraCal = isMale ? MALE_EXTRA.cal : 0;
+      const extraPro = isMale ? MALE_EXTRA.pro : 0;
+
+      container.innerHTML = DAYS_DATA.map((d, di) => {
+        const doneCount = [0, 1, 2, 3].filter(mi => doneMeals[`d${di}m${mi}`]).length;
+        const totalCal = d.meals.reduce((s, m) => s + m.cal, 0) + extraCal;
+        const totalPro = d.meals.reduce((s, m) => s + m.pro, 0) + extraPro;
+        const isToday = di === realDayIdx;
+
+        return `
+          <div class="day-header-card" style="margin-bottom:0">
+            <div style="flex:1">
+              <div style="display:flex; align-items:center; gap:8px;">
+                <h3 style="font-family:var(--font-display); font-size:1.15rem; font-weight:700;">${d.name}</h3>
+                ${isToday ? '<span class="badge-today">Bugun</span>' : ''}
+                <span style="font-size:0.75rem; font-weight:700; color:var(--emerald); background:var(--emerald-light); padding:1px 8px; border-radius:999px;">${doneCount}/4 taom</span>
+              </div>
+              <div style="font-size:0.8rem; color:var(--text-muted); margin-top:2px;">
+                🔥 ${totalCal} kkal · 🥩 ${totalPro} g oqsil
+              </div>
+            </div>
+            <button class="water-quick-btn" onclick="selectDay(${di}); switchTab('today');">
+              Ko‘rish →
+            </button>
+          </div>
+        `;
+      }).join("");
+    }
+
+    /* =====================================================================
+       TAB 3: SHOPPING LIST (XARIDLAR)
+       ===================================================================== */
+    function renderShoppingList() {
+      const container = document.getElementById("shop-categories-container");
+      let totalItems = 0;
+      let boughtItems = 0;
+
+      let html = "";
+      SHOPPING_DATA.forEach(cat => {
+        const visibleItems = cat.items.filter(item => {
+          totalItems++;
+          const isChecked = !!shopChecks[item.id];
+          if (isChecked) boughtItems++;
+
+          if (currentShopFilter === "pending") return !isChecked;
+          if (currentShopFilter === "bought") return isChecked;
+          return true;
+        });
+
+        if (visibleItems.length === 0) return;
+
+        html += `
+          <div class="shop-cat-card">
+            <div class="shop-cat-header">
+              <div class="shop-cat-title">
+                <span>${cat.icon}</span>
+                <span>${cat.cat}</span>
+              </div>
+            </div>
+            <div class="shop-items-grid">
+              ${visibleItems.map(item => {
+                const isChecked = !!shopChecks[item.id];
+                return `
+                  <div class="shop-item-row ${isChecked ? 'bought' : ''}" onclick="toggleShopItem('${item.id}')">
+                    <div class="shop-item-left">
+                      <div class="custom-chk" style="${isChecked ? 'background:var(--emerald); border-color:var(--emerald); color:#fff;' : ''}">
+                        ${isChecked ? '✓' : ''}
+                      </div>
+                      <span>${item.name}</span>
+                    </div>
+                    <span class="shop-item-qty">${item.qty}</span>
+                  </div>
+                `;
+              }).join("")}
+            </div>
+          </div>
+        `;
+      });
+
+      container.innerHTML = html || `<div style="text-align:center; padding:30px; color:var(--text-muted)">Mahsulotlar topilmadi.</div>`;
+      document.getElementById("shop-progress-text").textContent = `${boughtItems} / ${totalItems} mahsulot olindi (${Math.round((boughtItems / (totalItems || 1)) * 100)}%)`;
+    }
+
+    function toggleShopItem(id) {
+      triggerHaptic();
+      if (shopChecks[id]) {
+        delete shopChecks[id];
+      } else {
+        shopChecks[id] = true;
+      }
+      Storage.set("shop_checks", shopChecks);
+      renderShoppingList();
+    }
+
+    function filterShop(type, btn) {
+      currentShopFilter = type;
+      document.querySelectorAll(".filter-chip").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      renderShoppingList();
+    }
+
+    function clearShopChecks() {
+      if (confirm("Barcha xarid ptichkalarini tozalashni xohlaysizmi?")) {
+        shopChecks = {};
+        Storage.set("shop_checks", shopChecks);
+        renderShoppingList();
+        showToast("Xarid ro‘yxati tozalandi", "🛒");
+      }
+    }
+
+    /* =====================================================================
+       TAB 4: WEIGHT TRACKING
+       ===================================================================== */
+    function renderWeightHistory() {
+      const container = document.getElementById("weight-history-container");
+      const latest = weightHistory[weightHistory.length - 1];
+      const startWeight = 84.0;
+      const targetWeight = 74.0;
+
+      const currentW = latest ? latest.weight : startWeight;
+      const diffLost = (startWeight - currentW).toFixed(1);
+      const remaining = Math.max(0, currentW - targetWeight).toFixed(1);
+
+      document.getElementById("weight-loss-total").textContent = diffLost > 0 ? `−${diffLost} kg` : `0.0 kg`;
+      document.getElementById("weight-remaining").textContent = `${remaining} kg`;
+      document.getElementById("hero-diff-text").textContent = diffLost > 0 ? `−${diffLost} kg` : `−10 kg`;
+
+      container.innerHTML = weightHistory.slice().reverse().map((entry, idx) => `
+        <div class="weight-log-item">
+          <span style="color:var(--text-muted)">${entry.date}</span>
+          <b style="font-family:var(--font-display); font-size:1.05rem;">${entry.weight} kg</b>
+        </div>
+      `).join("");
+    }
+
+    function saveNewWeight() {
+      const input = document.getElementById("current-weight-input");
+      const val = parseFloat(input.value);
+      if (!val || val < 40 || val > 200) {
+        alert("Iltimos, to‘g‘ri vazn kiriting (masalan, 83.2)");
+        return;
+      }
+      const todayStr = new Date().toLocaleDateString("uz-UZ", { day: "numeric", month: "short" });
+      weightHistory.push({ date: todayStr, weight: val });
+      Storage.set("weight_history", weightHistory);
+      input.value = "";
+      renderWeightHistory();
+      triggerConfetti();
+      showToast("Yangi vazn kiritildi va saqlandi! 🎯", "⚖️");
+    }
+
+    /* =====================================================================
+       TAB NAVIGATION
+       ===================================================================== */
+    function switchTab(tabId) {
+      triggerHaptic();
+      document.querySelectorAll(".tab-content").forEach(el => el.classList.remove("active"));
+      document.querySelectorAll(".nav-tab-btn").forEach(el => el.classList.remove("active"));
+
+      const targetTab = document.getElementById(`tab-${tabId}`);
+      const targetBtn = document.getElementById(`nav-btn-${tabId}`);
+      if (targetTab) targetTab.classList.add("active");
+      if (targetBtn) targetBtn.classList.add("active");
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    /* =====================================================================
+       RESET MODAL
+       ===================================================================== */
+    function openResetModal() {
+      document.getElementById("reset-modal").classList.add("open");
+    }
+    function closeResetModal() {
+      document.getElementById("reset-modal").classList.remove("open");
+    }
+    function confirmResetAll() {
+      doneMeals = {};
+      waterLog = {};
+      habitsLog = {};
+      Storage.set("done_meals", doneMeals);
+      Storage.set("water_log", waterLog);
+      Storage.set("habits_log", habitsLog);
+
+      closeResetModal();
+      updateActiveDayView();
+      renderDayPills();
+      renderWeekFullView();
+      showToast("Hafta qayta boshlandi. Omad yor bo‘lsin!", "🔄");
+    }
+
+    /* =====================================================================
+       CONFETTI SYSTEM
+       ===================================================================== */
+    function triggerConfetti() {
+      const canvas = document.getElementById("confetti-canvas");
+      const ctx = canvas.getContext("2d");
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      const particles = [];
+      const colors = ["#10B981", "#059669", "#F59E0B", "#38BDF8", "#EC4899", "#8B5CF6"];
+
+      for (let i = 0; i < 90; i++) {
+        particles.push({
+          x: canvas.width / 2,
+          y: canvas.height * 0.4,
+          r: Math.random() * 6 + 3,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          vx: (Math.random() - 0.5) * 16,
+          vy: (Math.random() - 0.7) * 16,
+          gravity: 0.35,
+          alpha: 1,
+          decay: Math.random() * 0.015 + 0.01
+        });
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        let activeCount = 0;
+        particles.forEach(p => {
+          if (p.alpha > 0) {
+            p.x += p.vx;
+            p.y += p.vy;
+            p.vy += p.gravity;
+            p.alpha -= p.decay;
+
+            ctx.globalAlpha = Math.max(0, p.alpha);
+            ctx.fillStyle = p.color;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fill();
+            activeCount++;
+          }
+        });
+        if (activeCount > 0) {
+          requestAnimationFrame(animate);
+        } else {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+      }
+      animate();
+    }
+
+    /* =====================================================================
+       EVENT LISTENERS
+       ===================================================================== */
+    function setupListeners() {
+      // Theme toggle
+      document.getElementById("theme-toggle-btn").addEventListener("click", () => {
+        triggerHaptic();
+        applyTheme(theme === "dark" ? "light" : "dark");
+      });
+
+      // Reset modal buttons
+      document.getElementById("reset-modal-btn").addEventListener("click", openResetModal);
+
+      // Gender buttons
+      document.getElementById("btn-male").addEventListener("click", () => {
+        gender = "male";
+        Storage.set("gender", "male");
+        document.getElementById("btn-male").classList.add("active");
+        document.getElementById("btn-female").classList.remove("active");
+        document.getElementById("metric-target-cal").textContent = "1450–1620";
+        document.getElementById("metric-tdee").textContent = "2130–2440";
+        document.getElementById("metric-duration").textContent = "12–18 h.";
+        updateActiveDayView();
+        renderWeekFullView();
+        showToast("Erkak rejimi yoqildi (+150 kkal norma)", "👨");
+      });
+
+      document.getElementById("btn-female").addEventListener("click", () => {
+        gender = "female";
+        Storage.set("gender", "female");
+        document.getElementById("btn-female").classList.add("active");
+        document.getElementById("btn-male").classList.remove("active");
+        document.getElementById("metric-target-cal").textContent = "1290–1470";
+        document.getElementById("metric-tdee").textContent = "1930–2220";
+        document.getElementById("metric-duration").textContent = "14–20 h.";
+        updateActiveDayView();
+        renderWeekFullView();
+        showToast("Ayol rejimi yoqildi", "👩");
+      });
+
+      // Jump to today
+      document.getElementById("jump-today-btn").addEventListener("click", () => {
+        selectDay(realDayIdx);
+        showToast("Bugungi kun tanlandi", "📍");
+      });
+    }
+
+    // Run on startup
+    window.addEventListener("DOMContentLoaded", init);
+  </script>
+</body>
+</html>
